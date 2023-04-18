@@ -609,7 +609,7 @@ class HlsProxy:
     def httpHeaders(self):
         headers = {
             "User-Agent": [
-                "AppleCoreMedia/1.0.0.13B42 (Macintosh; U; Intel Mac OS X 10_9_1; en_us)"
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
             ]
         }
         if self.referer:
