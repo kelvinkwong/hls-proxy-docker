@@ -6,8 +6,8 @@
 echo $url
 CONTAINER=$(awk -F ' ' '/container_name/ {print $NF}' docker-compose.yml)
 
-if whoami | grep -q "docker"; then
+if whoami | grep -q "guest"; then
     python /app/hlsproxy.py "$url" -o /app/docker-output
 else
-    docker exec --user "docker" -it $CONTAINER python /app/hlsproxy.py "$url" -o /app/docker-output
+    docker exec --user "guest" -it $CONTAINER python /app/hlsproxy.py "$url" -o /app/docker-output
 fi
