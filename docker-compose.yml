@@ -1,0 +1,15 @@
+version: '3'
+services:
+  hls-proxy:
+    container_name: hls-proxy
+    image: python:2.7-alpine
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    environment:
+      PUID: 1000
+      TZ: Australia/Sydney
+    volumes:
+      - ./:/app
+    tty: true
+    # user: docker
